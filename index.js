@@ -10,9 +10,6 @@ const api = new RippleAPI({
 api.on('error', (errorCode, errorMessage) => {
   console.log(errorCode + ': ' + errorMessage);
 });
-api.on('connected', () => {
-  console.log('connected');
-});
 api.connect().then(() => {
    for(i = 0; i < process.argv[2]; i++){
       const pair = api.generateAddress();
